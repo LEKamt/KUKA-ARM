@@ -1,0 +1,393 @@
+<?xml version="1.0" ?>
+<robot name="kuka" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find kuka_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find kuka_description)/urdf/kuka.trans" />
+<xacro:include filename="$(find kuka_description)/urdf/kuka.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0029378927519108453 -0.0005517491721788975 0.017290958876500877" rpy="0 0 0"/>
+    <mass value="0.027395984273896123"/>
+    <inertia ixx="1.4e-05" iyy="1.6e-05" izz="2e-05" ixy="0.0" iyz="0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link1_1">
+  <inertial>
+    <origin xyz="0.0006547470181754348 -0.007089850790327905 0.013898854642724015" rpy="0 0 0"/>
+    <mass value="0.013357541101550593"/>
+    <inertia ixx="5e-06" iyy="5e-06" izz="5e-06" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.000109 0.000429 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.000109 0.000429 -0.045" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link2_1">
+  <inertial>
+    <origin xyz="-0.03883420204417922 -0.010780789028677493 -5.038069102282494e-05" rpy="0 0 0"/>
+    <mass value="0.02621954867895997"/>
+    <inertia ixx="3e-06" iyy="3.3e-05" izz="3.2e-05" ixy="1e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="3.6e-05 0.027639 -0.072522" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+  <collision>
+    <origin xyz="3.6e-05 0.027639 -0.072522" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link3_1">
+  <inertial>
+    <origin xyz="-0.03321537926841532 0.03301495309357509 -2.229494525492204e-05" rpy="0 0 0"/>
+    <mass value="0.027224546014424436"/>
+    <inertia ixx="1.1e-05" iyy="1.9e-05" izz="2.5e-05" ixy="9e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.086036 0.027639 -0.072522" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+  <collision>
+    <origin xyz="0.086036 0.027639 -0.072522" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link4_1">
+  <inertial>
+    <origin xyz="-0.019148246861331403 -0.012489446111304741 -0.0007892710934023078" rpy="0 0 0"/>
+    <mass value="0.01811481566128472"/>
+    <inertia ixx="2e-06" iyy="6e-06" izz="7e-06" ixy="-1e-06" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.156036 -0.014361 -0.072522" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+  <collision>
+    <origin xyz="0.156036 -0.014361 -0.072522" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link1_cap_1">
+  <inertial>
+    <origin xyz="-0.013013466916256093 0.016145486766315588 -0.006130596599308091" rpy="0 0 0"/>
+    <mass value="0.0053726515113858425"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.013004 0.007554 -0.080155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link1_cap_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.013004 0.007554 -0.080155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link1_cap_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link3_cap1_1">
+  <inertial>
+    <origin xyz="0.010025100928182748 -0.005161271039292805 -0.009084021004267154" rpy="0 0 0"/>
+    <mass value="0.003373728597348495"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.091605 -0.006112 -0.081774" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link3_cap1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.091605 -0.006112 -0.081774" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link3_cap1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link3_cap2_1">
+  <inertial>
+    <origin xyz="-0.15197099020904353 -0.08938094507503869 -0.023239283494323013" rpy="0 0 0"/>
+    <mass value="0.00284293863892875"/>
+    <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.014994 -0.117293 -0.095763" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link3_cap2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.014994 -0.117293 -0.095763" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/link3_cap2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="engranaje1_1">
+  <inertial>
+    <origin xyz="-0.004897850580169505 0.0034635734527817767 -0.001782787558221463" rpy="0 0 0"/>
+    <mass value="0.0007162375213993948"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.200506 -0.006361 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/engranaje1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.200506 -0.006361 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/engranaje1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="engranaje2_1">
+  <inertial>
+    <origin xyz="-0.003720863040076239 -0.002377715738107411 -0.002001547197835074" rpy="0 0 0"/>
+    <mass value="0.0009916544624793446"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.200506 0.007639 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/engranaje2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.200506 0.007639 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/engranaje2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="barra2_1">
+  <inertial>
+    <origin xyz="-0.006981416361025228 0.003255813758706021 0.001736038282841787" rpy="0 0 0"/>
+    <mass value="0.0008376224665194664"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.213498 -0.003361 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/barra2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.213498 -0.003361 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/barra2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="barra1_1">
+  <inertial>
+    <origin xyz="-0.0069814216506425 -0.003255436950101849 0.0017360383457993706" rpy="0 0 0"/>
+    <mass value="0.0008376221812366715"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.213498 0.004639 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/barra1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.213498 0.004639 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/barra1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pinza2_1">
+  <inertial>
+    <origin xyz="-0.015538185610645683 0.001525907733314135 0.0017784868513636976" rpy="0 0 0"/>
+    <mass value="0.0022932493664789815"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.216625 0.018028 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/pinza2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.216625 0.018028 -0.069712" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/pinza2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="pinza1_1">
+  <inertial>
+    <origin xyz="-0.015346460858471772 -0.0028736207797861475 0.001778487025626177" rpy="0 0 0"/>
+    <mass value="0.0022932486588840644"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.216225 -0.017345 -0.070162" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/pinza1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.216225 -0.017345 -0.070162" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find kuka_description)/meshes/pinza1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="SERVO_01" type="revolute">
+  <origin xyz="0.000109 -0.000429 0.045" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="link1_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="SERVO_02" type="continuous">
+  <origin xyz="-0.000145 -0.02721 0.027522" rpy="0 0 0"/>
+  <parent link="link1_1"/>
+  <child link="link2_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="SERVO_03" type="revolute">
+  <origin xyz="-0.086 0.0 0.0" rpy="0 0 0"/>
+  <parent link="link2_1"/>
+  <child link="link3_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+  <limit upper="6.283185" lower="3.141593" effort="100" velocity="100"/>
+</joint>
+
+<joint name="SERVO_04" type="revolute">
+  <origin xyz="-0.07 0.042 0.0" rpy="0 0 0"/>
+  <parent link="link3_1"/>
+  <child link="link4_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="cap1" type="fixed">
+  <origin xyz="0.012895 -0.007125 0.035155" rpy="0 0 0"/>
+  <parent link="link1_1"/>
+  <child link="link1_cap_1"/>
+</joint>
+
+<joint name="cap2" type="fixed">
+  <origin xyz="-0.005569 0.033751 0.009252" rpy="0 0 0"/>
+  <parent link="link3_1"/>
+  <child link="link3_cap1_1"/>
+</joint>
+
+<joint name="cap3" type="fixed">
+  <origin xyz="0.10103 0.144932 0.023241" rpy="0 0 0"/>
+  <parent link="link3_1"/>
+  <child link="link3_cap2_1"/>
+</joint>
+
+<joint name="A1" type="revolute">
+  <origin xyz="-0.04447 -0.008 -0.00281" rpy="0 0 0"/>
+  <parent link="link4_1"/>
+  <child link="engranaje1_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+  <limit upper="1.570796" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="A2" type="continuous">
+  <origin xyz="-0.04447 -0.022 -0.00281" rpy="0 0 0"/>
+  <parent link="link4_1"/>
+  <child link="engranaje2_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="B1" type="continuous">
+  <origin xyz="-0.057462 -0.011 -0.00281" rpy="0 0 0"/>
+  <parent link="link4_1"/>
+  <child link="barra2_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="B2" type="continuous">
+  <origin xyz="-0.057462 -0.019 -0.00281" rpy="0 0 0"/>
+  <parent link="link4_1"/>
+  <child link="barra1_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="C2" type="continuous">
+  <origin xyz="-0.016119 -0.010389 0.0" rpy="0 0 0"/>
+  <parent link="engranaje2_1"/>
+  <child link="pinza2_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="C1" type="continuous">
+  <origin xyz="-0.015719 0.010984 0.00045" rpy="0 0 0"/>
+  <parent link="engranaje1_1"/>
+  <child link="pinza1_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+</robot>

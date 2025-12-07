@@ -1,0 +1,15 @@
+# Objetivo (Goal)
+float64 	x
+float64 	y
+float64 	z
+float64 	g
+uint8 		enfoque
+---
+# Resultado (Result)
+float64 	x_final
+float64 	y_final
+float64 	z_final
+string 		descripcion
+---
+# Retroalimentación (Feedback)
+string 		etapa

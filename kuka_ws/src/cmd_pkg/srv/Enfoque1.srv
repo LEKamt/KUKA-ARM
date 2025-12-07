@@ -1,0 +1,4 @@
+float64[3] target
+---
+sensor_msgs/JointState joint_out
+bool success
