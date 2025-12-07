@@ -2,7 +2,7 @@
 
 # Guía detallada de uso del proyecto
 
-**Creado por Luis Kamt – 6/12/2025 – Proyecto FR**
+**Creado por Luis Kamt - 6/12/2025 - Proyecto FR**
 
 ## Requisitos recomendados
 
